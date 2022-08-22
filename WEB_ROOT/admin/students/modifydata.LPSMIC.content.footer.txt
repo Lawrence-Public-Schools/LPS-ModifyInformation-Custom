@@ -1,0 +1,127 @@
+<!-- create a hidden table with added rows -->
+<table id="LPSModifyDataCustomhiddentable" style="display: none;">
+<tr id="exclude_fr_rankidrow">
+<td class="bold">~[text:psx.html.admin_students.misc.exclude_from_class_ranking] &tilde;</td>
+<td>
+<input type="checkbox" name="[01]exclude_fr_rank" value="1">
+</td>
+</tr>
+<tr id="MA_Health_IDidrow">
+<td class="bold">MASS Health ID &tilde;</td>
+<td>
+<input type="text" name="[01]MA_Health_ID" value="" size="25">
+</td>
+</tr>
+<tr id="dateOfEntryIntoUSAidrow">
+<td class="bold">~[text:psx.html.admin_students.misc.date_of_entry_into_usa] &tilde;</td>
+<td>
+<input type="text" name="[01]dateOfEntryIntoUSA" value="" size="9" onChange="checkDates_Blank('~(JSFieldParam;[01]dateOfEntryIntoUSA)');">
+</td>
+</tr>
+<tr id="other_alertidrow">
+<td class="bold">~[text:psx.html.admin_students.misc.other_alert] &tilde;</td>
+<td>
+</td>
+</tr>
+<tr id="Alert_Otheridrow">
+<td class="bold">~[text:psx.html.admin_students.misc.other_alert_text] &tilde;</td>
+<td>
+<textarea name="[01]Alert_Other" rows="4" cols="40"></textarea>
+</td>
+</tr>
+
+<tr id="Alert_OtherExpiresidrow">
+<td class="bold">Other ~[text:psx.html.admin_students.misc.alert_expires,param:(Date)] &tilde;</td>
+<td>
+<input type="text" name="[01]Alert_OtherExpires" value="" size="10" onChange="checkDates('~(JSFieldParam;[01]Alert_OtherExpires)');">
+</td>
+</tr>
+<tr id="Buildingidrow">
+<td class="bold">~[text:psx.html.admin_students.modifydata.current_campusbuilding] &tilde;</td>
+<td>
+<input type="text" name="[Students]Building" value="" size="5" disabled>~[if.~(studentscreenaccess;transferinfo.html)=1] Edit via <a href="transferinfo.html?frn=~(studentfrn)"> ~[text:psx.html.admin_students.more2.transfer_info]</a>[/if]
+</td>
+</tr>
+<tr id="Trackidrow">
+<td class="bold">~[text:psx.html.admin_students.modifydata.track] &tilde;</td>
+<td>
+<input type="text" name="[Students]Track" value="" size="5" disabled>~[if.~(studentscreenaccess;transferinfo.html)=1] Edit via <a href="transferinfo.html?frn=~(studentfrn)"> ~[text:psx.html.admin_students.more2.transfer_info]</a>[/if]
+</td>
+</tr>
+<tr id="Houseidrow">
+<td class="bold">Current Scheduled House &tilde;</td>
+<td>
+<select name="[Students]Sched_NextYearHouse" special="student.House"><option></select>
+</td>
+</tr>
+<tr id="Enroll_Statusidrow">
+<td class="bold">Enroll Status &tilde;</td>
+<td>
+<select name="[Students]Enroll_Status" id="selectEnroll_Status">
+<option value="-2">Inactive</option>
+<option value="-1" >Pre-registered</option>
+<option value="0">Currently enrolled</option>
+<option value="1" >Inactive</option>
+<option value="2" >Transferred out</option>
+<option value="3" >Graduated</option>
+</select>
+<!--<option value="N">Non-Binary (N)</option>-->
+</td>
+</tr>
+
+</table>
+<!-- use jQuery to move the hidden row and remove the hidden table -->
+<script type="text/javascript">
+    function MoveLPSModifyDataCustom(){ 
+        $j("table:first tbody").prepend($j("#Enroll_Statusidrow"));
+        $j("table:first tbody").append($j("#exclude_fr_rankidrow"));
+        $j("table:first tbody").append($j("#MA_Health_IDidrow"));
+        $j("table:first tbody").append($j("#dateOfEntryIntoUSAidrow"));
+        //$j("table:first tbody").append($j("#other_alertidrow"));
+        $j("table:first tbody").append($j("#Alert_OtherExpiresidrow"));
+        $j("table:first tbody").append($j("#Alert_Otheridrow"));
+        $j("table:first tbody").prepend($j("#Enroll_Statusidrow"));
+		$j("select[data-validation*='students.building']").parent().parent().after($j("#Buildingidrow"));
+		$j("select[data-validation*='students.building']").parent().parent().remove();
+		$j("select[data-validation*='students.track']").parent().parent().after($j("#Trackidrow"));
+		$j("select[data-validation*='students.track']").parent().parent().remove();
+		$j("select[data-validation*='students.house']").parent().parent().after($j("#Houseidrow"));
+        $j("#LPSModifyDataCustomhiddentable").remove();
+        $j("table:first tr").removeAttr("bgcolor");
+        
+        //$j("input").attr({'disabled':'disabled','title':'Disabled'});
+        //$j("textarea").attr({'disabled':'disabled','title':'Disabled'});
+        //$j("select").attr({'disabled':'disabled','title':'Disabled'});
+       
+        //$j("select#selectEnroll_Status").attr({'disabled':false,'title':''});
+        //$j("select[data-validation*='students.house']").attr({'disabled':'disabled','title':''});
+        //$j("select[data-validation*='students.track']").attr({'disabled':false,'title':''});
+		//$j("select[data-validation*='students.team']").attr({'disabled':'disabled','title':''});
+		$j("select[data-validation*='students.studentcorefields.tracker']").attr({'disabled':'disabled','title':''});
+		//$j("tr#MA_Health_IDidrow td input").attr({'disabled':false,'title':false});
+		$j("input[data-validation*='students.alert_otherexpires']").attr({'disabled':false,'title':false});
+		$j("select[data-validation*='students.building']").attr({'disabled':'disabled','title':''});
+		$j("input[data-validation*='students.alert_otherexpires']").attr({'disabled':false,'title':false});
+		$j("input[data-validation*='students.studentcorefields.family_rep']").attr({'disabled':'disabled','title':'Disabled'});
+		$j("input[data-validation*='students.home_room']").attr({'disabled':'disabled','title':'Disabled'});
+		$j("input[data-validation*='students.locker_combination']").attr({'disabled':'disabled','title':'Disabled'});
+		$j("input[data-validation*='students.locker_number']").attr({'disabled':'disabled','title':'Disabled'});
+		$j("input[data-validation*='students.lunch_id']").attr({'disabled':'disabled','title':'Disabled'});
+		$j("input[data-validation*='students.studentcorefields.parttimestudent']").attr({'disabled':'disabled','title':'Disabled'});
+		$j("input[data-validation*='students.phone_id']").attr({'disabled':'disabled','title':'Disabled'});
+		$j("input[data-validation*='students.districtentrydate']").attr({'disabled':'disabled','title':'Disabled'});
+		$j("input[data-validation*='students.districtentrygradelevel']").attr({'disabled':'disabled','title':'Disabled'});
+		$j("input[data-validation*='students.schoolentrydate']").attr({'disabled':'disabled','title':'Disabled'});
+		$j("input[data-validation*='students.schoolentrygradelevel']").attr({'disabled':'disabled','title':'Disabled'});
+		$j("tr#exclude_fr_rankidrow td input").attr({'disabled':'disabled','title':'Disabled'});
+		$j("input[data-validation*='students.studentcorefields.dateofentryintousa']").attr({'disabled':'disabled','title':'Disabled'});
+
+    }
+   function RemoveLPSModifyDataCustom(){ 
+        $j("#LPSModifyDataCustomhiddentable").remove();
+    }
+    $j(document).ready(MoveLPSModifyDataCustom);
+    
+    //$j(document).ready(RemoveLPSModifyDataCustom);
+    //MoveLPSModifyDataCustom();
+</script>
