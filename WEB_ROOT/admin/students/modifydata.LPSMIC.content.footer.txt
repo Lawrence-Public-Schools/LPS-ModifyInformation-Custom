@@ -65,10 +65,8 @@
 <option value="2" >Transferred out</option>
 <option value="3" >Graduated</option>
 </select>
-<!--<option value="N">Non-Binary (N)</option>-->
 </td>
 </tr>
-
 </table>
 <!-- use jQuery to move the hidden row and remove the hidden table -->
 <script type="text/javascript">
@@ -104,8 +102,8 @@
 		$j("input[data-validation*='students.alert_otherexpires']").attr({'disabled':false,'title':false});
 		$j("input[data-validation*='students.studentcorefields.family_rep']").attr({'disabled':'disabled','title':'Disabled'});
 		$j("input[data-validation*='students.home_room']").attr({'disabled':'disabled','title':'Disabled'});
-		$j("input[data-validation*='students.locker_combination']").attr({'disabled':'disabled','title':'Disabled'});
-		$j("input[data-validation*='students.locker_number']").attr({'disabled':'disabled','title':'Disabled'});
+		//$j("input[data-validation*='students.locker_combination']").attr({'disabled':'disabled','title':'Disabled'});
+		//$j("input[data-validation*='students.locker_number']").attr({'disabled':'disabled','title':'Disabled'});
 		$j("input[data-validation*='students.lunch_id']").attr({'disabled':'disabled','title':'Disabled'});
 		$j("input[data-validation*='students.studentcorefields.parttimestudent']").attr({'disabled':'disabled','title':'Disabled'});
 		$j("input[data-validation*='students.phone_id']").attr({'disabled':'disabled','title':'Disabled'});
