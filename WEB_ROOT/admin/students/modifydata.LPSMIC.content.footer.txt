@@ -67,6 +67,12 @@
 </select>
 </td>
 </tr>
+<tr id="Homeroom2">
+<td>Home Room Teacher</td>
+<td>
+    <input id="fieldTeacherHomeroom" name="[Students.U_Students_Extension]HOMEROOM_TEACHER" value=""/>
+</td>
+</tr>
 </table>
 <!-- use jQuery to move the hidden row and remove the hidden table -->
 <script type="text/javascript">
@@ -84,6 +90,7 @@
 		$j("select[data-validation*='students.track']").parent().parent().after($j("#Trackidrow"));
 		$j("select[data-validation*='students.track']").parent().parent().remove();
 		$j("select[data-validation*='students.house']").parent().parent().after($j("#Houseidrow"));
+		$j("td:contains('Home Room')").first().parent().after($j("#Homeroom2"));
         $j("#LPSModifyDataCustomhiddentable").remove();
         $j("table:first tr").removeAttr("bgcolor");
         
@@ -101,7 +108,7 @@
 		$j("select[data-validation*='students.building']").attr({'disabled':'disabled','title':''});
 		$j("input[data-validation*='students.alert_otherexpires']").attr({'disabled':false,'title':false});
 		$j("input[data-validation*='students.studentcorefields.family_rep']").attr({'disabled':'disabled','title':'Disabled'});
-		$j("input[data-validation*='students.home_room']").attr({'disabled':'disabled','title':'Disabled'});
+		//$j("input[data-validation*='students.home_room']").attr({'disabled':'disabled','title':'Disabled'});
 		//$j("input[data-validation*='students.locker_combination']").attr({'disabled':'disabled','title':'Disabled'});
 		//$j("input[data-validation*='students.locker_number']").attr({'disabled':'disabled','title':'Disabled'});
 		$j("input[data-validation*='students.lunch_id']").attr({'disabled':'disabled','title':'Disabled'});
