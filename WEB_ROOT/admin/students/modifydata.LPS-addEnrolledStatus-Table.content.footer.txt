@@ -1,0 +1,23 @@
+<script src="/admin/javascript/LPS-MIC-addEnrolledStatus-Table.js" type="text/javascript"></script>
+<table id="LPS-EnrolledStatus-Table" style="display: none;">
+    <tbody>
+        <tr id="LPS-EnrolledStatus-Header">
+            <th colspan="2">
+                &#10026; Status
+            </th>
+        </tr>
+        <tr id="LPS-EnrolledStatus-Data">
+            <td>Enroll Status</td>
+            <td>
+                <select name="[Students]Enroll_Status" id="selectEnroll_Status">
+                    <option value="-2">Inactive</option>
+                    <option value="-1">Pre-registered</option>
+                    <option value="0">Currently enrolled</option>
+                    <option value="1">Inactive</option>
+                    <option value="2">Transferred out</option>
+                    <option value="3">Graduated</option>
+                </select>
+            </td>
+        </tr>
+    </tbody>
+</table>
