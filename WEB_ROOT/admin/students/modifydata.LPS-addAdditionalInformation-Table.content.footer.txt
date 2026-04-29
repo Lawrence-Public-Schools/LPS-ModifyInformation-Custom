@@ -18,6 +18,16 @@
                 <input type="text" name="[01]MA_Health_ID" value="" size="25">
             </td>
         </tr>
+        <tr id="LPS-AdditionalInformation-Photo_Optout_Flag">
+            <td>Media Opt-Out</td>
+            <td>
+                <select name="[Students.U_Students_Extension]Photo_optout_flag">
+                    <option value=""></option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </td>
+        </tr>
         <tr id="LPS-AdditionalInformation-Date_Of_Entry_Into_USA">
             <td>~[text:psx.html.admin_students.misc.date_of_entry_into_usa]</td>
             <td>
