@@ -21,9 +21,7 @@ function AddLPSAdditionalInformationTable() {
 
 function AddLPSEnrolledStatusTable() {
     // Find the "Modify Info" header row within the first table's tbody
-    var $modifyInfoHeaderRow = $j('table:first tbody th').filter(function () {
-        return $j(this).text().trim() === 'Modify Info';
-    }).closest('tr');
+    var $modifyInfoHeaderRow = $j('div#content-main form.submitOnce div.box-round table.linkDescList tbody tr:nth-child(1)');
 
     // Grab all the rows from the hidden Enrolled Status table
     var $enrolledStatusRows = $j('#LPS-EnrolledStatus-Table').find('tr');
