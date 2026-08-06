@@ -27,7 +27,6 @@
                 <select name="[Students.U_Students_Extension]Photo_optout_flag">
                     <option value=""></option>
                     <option value="Yes">Yes</option>
-                    <option value="No">No</option>
                 </select>
             </td>
         </tr>
